@@ -8,6 +8,7 @@ public class Etudiant {
 	private String nom;
 	private String prenom;
 	private int age;
+	
 	private String matricule;
 	
 	public Etudiant() {
