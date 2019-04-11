@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: etudproject
+---
+testFramework: junit
+sourceLanguage: java
