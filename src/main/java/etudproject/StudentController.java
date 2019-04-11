@@ -5,10 +5,10 @@ import io.micronaut.http.MediaType;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 
-@Controller("/showstudent") 
-public class HelloController {
+@Controller("/student") 
+public class StudentController {
 
-    @Get(produces = MediaType.ALL) 
+    @Get("/") 
     public List<Etudiant> index() {
     	Etudiant etudiant = new Etudiant();
   
