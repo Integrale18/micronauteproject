@@ -11,7 +11,7 @@ public class HelloController {
     @Get(produces = MediaType.ALL) 
     public List<Etudiant> index() {
     	Etudiant etudiant = new Etudiant();
-   
+  
         return etudiant.getMyList(); 
         
     }
