@@ -65,7 +65,7 @@ public class MemoryProductStorageTest{
      }
      
      // getting a product by its id will throw a NotExistingProductException if it does not exits
-     
+     // getting a product by its id will return it if it does exist
      
      public void getProductOrThrowExceptionIfNot() {
     	 
