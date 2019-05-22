@@ -1,16 +1,15 @@
 package etudproject;
-import io.micronaut.context.ApplicationContext;
-import io.micronaut.http.HttpRequest;
-import io.micronaut.http.client.HttpClient;
-import io.micronaut.runtime.server.EmbeddedServer;
+import static org.junit.Assert.assertEquals;
+
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+
 import io.micronaut.context.ApplicationContext;
+import io.micronaut.http.HttpRequest;
 import io.micronaut.http.HttpStatus;
-import io.micronaut.http.client.RxHttpClient;
+import io.micronaut.http.client.HttpClient;
+import io.micronaut.runtime.server.EmbeddedServer;
 public class StudentControllerTest {
 
     private static EmbeddedServer server;
