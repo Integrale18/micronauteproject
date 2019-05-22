@@ -39,8 +39,7 @@ public class MemoryProductStorageTest {
 		produit.setDescription("Yaourt");
 
 		String idp = client.toBlocking().retrieve(HttpRequest.POST("/product", produit));
-		Produit myproduit = client.toBlocking().retrieve(HttpRequest.GET("/product/" + idp),
-				Argument.of(Produit.class));
+		Produit myproduit = client.toBlocking().retrieve(HttpRequest.GET("/product/" + idp), Argument.of(Produit.class));
 		assertEquals(produit.getDescription(), myproduit.getDescription());
 	}
 
@@ -66,14 +65,14 @@ public class MemoryProductStorageTest {
 
 		String id = client.toBlocking().retrieve(HttpRequest.POST("/product/", produit));
 
-		client.toBlocking().retrieve(HttpRequest.DELETE("/product/" + id), Argument.of(HttpStatus.class));
+		client.toBlocking().retrieve(HttpRequest.DELETE("/product/"+id), Argument.of(HttpStatus.class));
 
 		List<Produit> newproduits = client.toBlocking().retrieve(HttpRequest.GET("/product/"),
 				Argument.listOf(Produit.class));
 
 		assertEquals(newproduits.size(), produits.size());
 	}
-/*
+
 	@Test
 	public void testupdateProductAndUpdateInTheList() {
 
@@ -81,18 +80,16 @@ public class MemoryProductStorageTest {
 		produit.setDescription("Victago");
 		String id = client.toBlocking().retrieve(HttpRequest.POST("/product/", produit));
 
-		Produit myproduit = client.toBlocking().retrieve(HttpRequest.GET("/product/" + id), Argument.of(Produit.class)); 
-		
-	
-		myproduit.setDescription("jus");
+		Produit updateProduit = new Produit();
+		updateProduit.setDescription("jus");
 
-		client.toBlocking().retrieve(HttpRequest.PATCH("/product/" + id, myproduit), Argument.of(HttpStatus.class));
+		client.toBlocking().retrieve(HttpRequest.PATCH("/product/"+id, updateProduit), Argument.of(HttpStatus.class));
 
-		Produit newp = client.toBlocking().retrieve(HttpRequest.GET("/product/" + id), Argument.of(Produit.class));
+		Produit myproduit = client.toBlocking().retrieve(HttpRequest.GET("/product/"+id), Argument.of(Produit.class));
 
-		assertEquals("jus", newp.getDescription());
+		assertEquals(updateProduit.getDescription(), myproduit.getDescription());
 	}
-*/
+
 	@Test
 	public void testGetById() {
 

@@ -1,7 +1,6 @@
 package etudproject;
 
 import java.util.List;
-
 import io.micronaut.http.HttpStatus;
 import io.micronaut.http.annotation.Body;
 import io.micronaut.http.annotation.Controller;
