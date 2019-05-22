@@ -5,10 +5,29 @@ import java.util.UUID;
 import store.MemoryProductStorage;
 import store.NotExistingProductException;
 import store.Produit;
+import spock.lang.*;
+import io.micronaut.runtime.server.EmbeddedServer;
+import io.micronaut.http.client.RxHttpClient;
+import io.micronaut.http.client.exceptions.HttpClientResponseException;
+import io.micronaut.context.ApplicationContext;
+import io.micronaut.core.type.Argument;
+import io.micronaut.http.HttpRequest;
+import io.micronaut.http.HttpResponse;
+import io.micronaut.http.HttpStatus;
+import spock.lang.AutoCleanup;
+import spock.lang.Shared;
+import spock.lang.Specification;
+import io.micronaut.context.ApplicationContext;
+import io.micronaut.http.HttpStatus;
+import io.micronaut.http.client.RxHttpClient;
+import io.micronaut.runtime.server.EmbeddedServer;
+import javax.inject.Inject;
 
+public class MemoryProductStorageTest extends Specification{
 
-public class MemoryProductStorageTest{
-
+	//@Shared @AutoCleanup EmbeddedServer embeddedServer = ApplicationContext.run(EmbeddedServer);
+	
+	//@Shared @AutoCleanup RxHttpClient client = embeddedServer.applicationContext.createBean(RxHttpClient, embeddedServer.getURL());
 	MemoryProductStorage store = new MemoryProductStorage();
 	
 	// empty storage returns empty list
