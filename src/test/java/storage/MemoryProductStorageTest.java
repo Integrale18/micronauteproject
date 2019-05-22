@@ -95,16 +95,9 @@ public class MemoryProductStorageTest {
 */
 	@Test
 	public void testGetById() {
-
-		// New product object
 		Produit produit = new Produit();
 		produit.setDescription("LOHO");
-
-		// we save the product we create, the request return the id of the current
-		// product
 		String id = client.toBlocking().retrieve(HttpRequest.POST("/product/", produit));
-
-		// we check if the the return object has LOHO like description
 		Produit myproduit = client.toBlocking().retrieve(HttpRequest.GET("/product/" + id), Argument.of(Produit.class));
 		assertEquals(produit.getDescription(), myproduit.getDescription());
 
