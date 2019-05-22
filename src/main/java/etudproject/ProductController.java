@@ -26,9 +26,9 @@ public class ProductController {
 
 	@Get("/{id}")
 	Produit get(String id) {
-	
-			return storage.getByID(id)	;
-		
+
+		return storage.getByID(id)	;
+
 	}
 
 	@Post("/")

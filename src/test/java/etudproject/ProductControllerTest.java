@@ -11,7 +11,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class ProductControllerTest extends Specification {
+public class ProductControllerTest{
 
     @Test
     public void testIndex() throws Exception {
