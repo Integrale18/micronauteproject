@@ -10,46 +10,42 @@ public class MemoryProductStorage implements ProductStorage {
 
 	@Override
 	public String save(Produit p) {
-		p.id = UUID.randomUUID().toString();
+		p.setId(UUID.randomUUID().toString());
 		productList.add(p);
-		return p.id;
+		return p.getId();
 	}
 
 	@Override
-	public void update(String id, Produit p) {
+	public void update(String id, Produit p) throws NotExistingProductException {
 		Produit product = getByID(id);
 		int productIndex = productList.indexOf(product);
-		p.id = UUID.randomUUID().toString();
-		productList.add(productIndex, p);
-		productList.remove(product);
+		p.setId(product.getId());
+		productList.set(productIndex, p);
 
 	}
 
 	@Override
-	public Produit getByID(String id) {
+	public Produit getByID(String id) throws NotExistingProductException {
 		Produit p =null;
 
 		for (int i = 0; i < productList.size(); i++) {
-			if (productList.get(i).id.equals(id)) {
+			if (productList.get(i).getId().equals(id)) {
 				p= productList.get(i);
+				break;
 			}
 		}
 		if(p ==null) {
-			try {
+			
 				throw new NotExistingProductException("Product not found");
-			} catch (NotExistingProductException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			
 		}else {
 			return p;
 		}
-		return p;
 
 	}
 
 	@Override
-	public void delete(String id) {
+	public void delete(String id) throws NotExistingProductException {
 		Produit product = getByID(id);
 		productList.remove(product);
 

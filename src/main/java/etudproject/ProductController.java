@@ -26,7 +26,7 @@ public class ProductController {
 
 
 	@Get("/{id}")
-	Produit get(String id) {
+	Produit get(String id) throws NotExistingProductException {
 
 		return storage.getByID(id)	;
 

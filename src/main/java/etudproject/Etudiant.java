@@ -12,17 +12,7 @@ public class Etudiant {
 	private String matricule;
 	
 	public Etudiant() {
-		super();
-	}
-	@Override
-	public String toString() {
-		return "Etudiant [nom=" + nom + ", prenom=" + prenom + ", age=" + age + ", matricule=" + matricule + "]";
-	}
-	public Etudiant(String nom, String prenom, int age, String matricule) {
-		this.nom = nom;
-		this.prenom = prenom;
-		this.age = age;
-		this.matricule = matricule;
+		
 	}
 	public String getNom() {
 		return nom;
