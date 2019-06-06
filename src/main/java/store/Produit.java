@@ -2,11 +2,11 @@ package store;
 
 public class Produit {
 
-	String id;
-	String name;
-	String description;
-	double price;
-	double idealTemperature;
+	private String id;
+	private String name;
+	private String description;
+	private double price;
+	private double idealTemperature;
 
 	public String getId() {
 		return id;
@@ -20,9 +20,6 @@ public class Produit {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
 
 	public String getDescription() {
 		return description;

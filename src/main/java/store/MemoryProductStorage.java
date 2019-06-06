@@ -10,16 +10,16 @@ public class MemoryProductStorage implements ProductStorage {
 
 	@Override
 	public String save(Produit p) {
-		p.id = UUID.randomUUID().toString();
+		p.setId(UUID.randomUUID().toString());
 		productList.add(p);
-		return p.id;
+		return p.getId();
 	}
 
 	@Override
 	public void update(String id, Produit p) throws NotExistingProductException {
 		Produit product = getByID(id);
 		int productIndex = productList.indexOf(product);
-		p.id = product.getId();
+		p.setId(product.getId());
 		productList.set(productIndex, p);
 
 	}
@@ -29,7 +29,7 @@ public class MemoryProductStorage implements ProductStorage {
 		Produit p =null;
 
 		for (int i = 0; i < productList.size(); i++) {
-			if (productList.get(i).id.equals(id)) {
+			if (productList.get(i).getId().equals(id)) {
 				p= productList.get(i);
 				break;
 			}
