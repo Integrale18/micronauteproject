@@ -20,7 +20,7 @@ public class MemoryProductStorage implements ProductStorage {
 		Produit product = getByID(id);
 		int productIndex = productList.indexOf(product);
 		p.id = product.getId();
-		productList.set(productIndex, p);;
+		productList.set(productIndex, p);
 
 	}
 

@@ -1,0 +1,3 @@
+[![Build Status](https://travis-ci.com/Integrale18/micronauteproject.svg?branch=coverage)](https://travis-ci.com/Integrale18/micronauteproject)
+[![CodeFactor](https://www.codefactor.io/repository/github/integrale18/micronauteproject/badge/coverage)](https://www.codefactor.io/repository/github/integrale18/micronauteproject/overview/coverage)
+[![Coverage Status](https://coveralls.io/repos/github/Integrale18/micronauteproject/badge.svg?branch=coverage)](https://coveralls.io/github/Integrale18/micronauteproject?branch=coverage)

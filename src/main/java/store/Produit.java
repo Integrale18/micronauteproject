@@ -48,9 +48,4 @@ public class Produit {
 		this.idealTemperature = idealTemperature;
 	}
 
-	public Produit() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
 }
