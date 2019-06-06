@@ -18,7 +18,7 @@ interface ProductStorage {
 	 * 
 	 * @param p the product to update
 	 */
-	void update(String id, Produit p);
+	void update(String id, Produit p) throws NotExistingProductException;
 
 	/**
 	 * get a product by its id
@@ -26,14 +26,14 @@ interface ProductStorage {
 	 * @param id
 	 * @return a product
 	 */
-	Produit getByID(String id);
+	Produit getByID(String id) throws NotExistingProductException;
 
 	/**
 	 * deletes a product by its id
 	 * 
 	 * @param id
 	 */
-	void delete(String id);
+	void delete(String id) throws NotExistingProductException;
 
 	/**
 	 * list all products
